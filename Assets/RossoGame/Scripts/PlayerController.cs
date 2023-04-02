@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using static UnityShared.Behaviours.Sprite.SpriteKeepInBounds;
 
@@ -8,6 +9,7 @@ namespace RossoGame
     {
         private Rigidbody2D _rigidbody;
 
+        public MissilePool missilePool;
         public float rotationSpeed;
         public float moveSpeed;
 
@@ -20,6 +22,7 @@ namespace RossoGame
         {
             Move();
             Rotate();
+            Shoot();
         }
 
         public void ResetInertiaY(BoundHit boundHit) => _rigidbody.velocity *= Vector2.right;
@@ -28,13 +31,16 @@ namespace RossoGame
         {
             var velocity = Vector2.up * Mathf.Max(0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime;
             _rigidbody.AddRelativeForce(velocity, ForceMode2D.Force);
-
-            print(velocity);
         }
         private void Rotate()
         {
             var _rotation = Vector3.back * Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
             transform.Rotate(_rotation);
+        }
+        private void Shoot()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                missilePool.Shoot();
         }
     }
 }
