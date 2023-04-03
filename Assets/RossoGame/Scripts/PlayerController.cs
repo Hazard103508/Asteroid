@@ -1,5 +1,5 @@
-using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Events;
 using static UnityShared.Behaviours.Sprite.SpriteKeepInBounds;
 
 namespace RossoGame
@@ -9,6 +9,8 @@ namespace RossoGame
     {
         private Rigidbody2D _rigidbody;
 
+        public GameObject flameLeft;
+        public GameObject flameRight;
         public MissilesHandler missileHandler;
         public float rotationSpeed;
         public float moveSpeed;
@@ -31,6 +33,13 @@ namespace RossoGame
         {
             var velocity = Vector2.up * Mathf.Max(0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime;
             _rigidbody.AddRelativeForce(velocity, ForceMode2D.Force);
+
+            bool showFlame = velocity.y > 0;
+            if (flameLeft.activeSelf != showFlame)
+            {
+                flameLeft.gameObject.SetActive(showFlame);
+                flameRight.gameObject.SetActive(showFlame);
+            }
         }
         private void Rotate()
         {
