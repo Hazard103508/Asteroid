@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1040b4e9a106ae4a8e00556b690b185, type: 3}
   m_Name: MeteorBig
   m_EditorClassIdentifier: 
-  smallMeteorPref: {fileID: 2910871451873887217, guid: 189bf9e694701e043a687e3bcc7c9789, type: 3}
+  innerMeteors:
+    prefab: {fileID: 8317320361339417916, guid: 189bf9e694701e043a687e3bcc7c9789, type: 3}
+    count: 2
+  score: 20
   speedRange:
     min: 1
     max: 2
-  score: 20

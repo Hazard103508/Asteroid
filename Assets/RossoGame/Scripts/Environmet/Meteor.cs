@@ -1,6 +1,6 @@
 using RossoGame.ScriptableObjects;
 using UnityEngine;
-using UnityShared.Structs;
+using UnityEngine.Events;
 
 namespace RossoGame.Environmet
 {
@@ -11,6 +11,8 @@ namespace RossoGame.Environmet
         private float speed;
         private float rotation;
         private Vector3 direction;
+
+        public UnityEvent<Meteor> onDestroy;
 
         private void Awake()
         {
@@ -33,19 +35,8 @@ namespace RossoGame.Environmet
             if (collision.gameObject.tag == "missile")
             {
                 collision.gameObject.SetActive(false);
-                BreakMeteor();
+                onDestroy.Invoke(this);
             }
-        }
-        private void BreakMeteor()
-        {
-            if (data.smallMeteorPref != null)
-                for (int i = 0; i < 2; i++)
-                {
-                    var obj = Instantiate(data.smallMeteorPref);
-                    obj.transform.position = this.transform.position;
-                }
-
-            Destroy(gameObject);
         }
     }
 }

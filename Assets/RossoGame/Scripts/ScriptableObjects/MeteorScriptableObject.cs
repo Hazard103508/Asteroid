@@ -1,3 +1,5 @@
+using RossoGame.Environmet;
+using System;
 using UnityEngine;
 using UnityShared.Structs;
 
@@ -6,8 +8,15 @@ namespace RossoGame.ScriptableObjects
     [CreateAssetMenu(fileName = "Meteor", menuName = "ScriptableObjects/Meteor", order = 1)]
     public class MeteorScriptableObject : ScriptableObject
     {
-        public GameObject smallMeteorPref;
-        public RangeNumber<float> speedRange;
+        public InnerMeteor innerMeteors;
         public int score;
+        public RangeNumber<float> speedRange;
+
+        [Serializable]
+        public class InnerMeteor
+        {
+            public Meteor prefab;
+            public int count;
+        }
     }
 }
