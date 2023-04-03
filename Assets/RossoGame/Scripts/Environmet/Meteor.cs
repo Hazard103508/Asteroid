@@ -1,10 +1,12 @@
+using RossoGame.ScriptableObjects;
 using UnityEngine;
+using UnityShared.Structs;
 
-namespace RossoGame
+namespace RossoGame.Environmet
 {
     public class Meteor : MonoBehaviour
     {
-        public GameObject smallMeteorPref;
+        public MeteorScriptableObject data;
 
         private float speed;
         private float rotation;
@@ -12,7 +14,7 @@ namespace RossoGame
 
         private void Awake()
         {
-            speed = Random.Range(1f, 3f);
+            speed = Random.Range(data.speedRange.min, data.speedRange.max);
             rotation = Random.Range(3, 90f);
             direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
         }
@@ -36,15 +38,14 @@ namespace RossoGame
         }
         private void BreakMeteor()
         {
-            if (smallMeteorPref != null)
+            if (data.smallMeteorPref != null)
                 for (int i = 0; i < 2; i++)
                 {
-                    var obj = Instantiate(smallMeteorPref);
+                    var obj = Instantiate(data.smallMeteorPref);
                     obj.transform.position = this.transform.position;
                 }
 
             Destroy(gameObject);
         }
-
     }
 }

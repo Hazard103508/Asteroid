@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace RossoGame
+namespace RossoGame.Environmet
 {
     public class Missile : MonoBehaviour
     {

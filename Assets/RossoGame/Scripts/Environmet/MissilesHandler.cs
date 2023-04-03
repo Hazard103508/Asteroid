@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RossoGame
+namespace RossoGame.Environmet
 {
     public class MissilesHandler : MonoBehaviour
     {

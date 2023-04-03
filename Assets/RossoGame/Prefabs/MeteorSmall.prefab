@@ -193,4 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb8fc12421ef9c4ca335c616da97749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallMeteorPref: {fileID: 0}
+  data: {fileID: 11400000, guid: 2ebc62f2b88de0147ac22efa9f5a6cb0, type: 2}

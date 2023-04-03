@@ -1,16 +1,14 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UIElements;
 using static UnityShared.Behaviours.Sprite.SpriteKeepInBounds;
 
-namespace RossoGame
+namespace RossoGame.Environmet
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour
     {
         private Rigidbody2D _rigidbody;
 
-        public GameObject explotionEffect;
+        public GameObject explotionEffectPref;
         public GameObject flameLeft;
         public GameObject flameRight;
         public MissilesHandler missileHandler;
@@ -54,12 +52,14 @@ namespace RossoGame
                 missileHandler.Shoot();
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "meteor")
             {
-                explotionEffect.SetActive(true);
-                GetComponent<SpriteRenderer>().enabled = false;
+                var effect = Instantiate(explotionEffectPref);
+                effect.transform.position = this.transform.position;
+
+                Destroy(this.gameObject);
             }
         }
     }
