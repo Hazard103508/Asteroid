@@ -1,5 +1,6 @@
 using RossoGame.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RossoGame.Environmet
 {
@@ -12,6 +13,8 @@ namespace RossoGame.Environmet
 
         private Rigidbody2D _rigidbody;
         private MissilesHandler missileHandler;
+
+        public UnityEvent onDestroyed;
 
         private void Awake()
         {
@@ -56,6 +59,7 @@ namespace RossoGame.Environmet
                 var effect = Instantiate(playerData.player.explotionEffect);
                 effect.transform.position = this.transform.position;
 
+                onDestroyed.Invoke();
                 Destroy(this.gameObject);
             }
         }
