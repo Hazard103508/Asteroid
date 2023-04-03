@@ -3,13 +3,15 @@ using UnityEngine;
 
 namespace RossoGame
 {
-    public class MissilePool : MonoBehaviour
+    public class MissilesHandler : MonoBehaviour
     {
         public GameObject missilePref;
+        public Transform missileCannon;
+        public Transform folder;
         public int ammo;
         public float missilSeed;
 
-        private List<Rigidbody2D> missiles;
+        private List<Missile> missiles;
         private int missileIndex = 0;
 
         private void Awake()
@@ -25,20 +27,19 @@ namespace RossoGame
                 return; // no hay misil disponible
 
             missile.gameObject.SetActive(true);
-            missile.transform.localPosition = Vector3.zero;
-            missile.transform.localRotation = Quaternion.identity;
-            missile.AddRelativeForce(Vector2.up * missilSeed * Time.deltaTime, ForceMode2D.Impulse);
+            missile.transform.position = missileCannon.transform.position;
+            missile.transform.localRotation = this.transform.localRotation;
 
             missileIndex = missileIndex == missiles.Count - 1 ? 0 : missileIndex + 1;
         }
 
         private void InstantiateMissiles()
         {
-            missiles = new List<Rigidbody2D>();
+            missiles = new List<Missile>();
             for (int i = 0; i < ammo; i++)
             {
-                var obj = Instantiate(missilePref);
-                missiles.Add(obj.GetComponent<Rigidbody2D>());
+                var obj = Instantiate(missilePref, folder);
+                missiles.Add(obj.GetComponent<Missile>());
             }
         }
     }

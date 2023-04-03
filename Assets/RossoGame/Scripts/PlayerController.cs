@@ -9,7 +9,7 @@ namespace RossoGame
     {
         private Rigidbody2D _rigidbody;
 
-        public MissilePool missilePool;
+        public MissilesHandler missileHandler;
         public float rotationSpeed;
         public float moveSpeed;
 
@@ -40,7 +40,7 @@ namespace RossoGame
         private void Shoot()
         {
             if (Input.GetKeyDown(KeyCode.Space))
-                missilePool.Shoot();
+                missileHandler.Shoot();
         }
     }
 }
