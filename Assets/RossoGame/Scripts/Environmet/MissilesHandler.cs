@@ -2,6 +2,7 @@ using RossoGame.ScriptableObjects;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RossoGame.Environmet
 {
@@ -13,6 +14,8 @@ namespace RossoGame.Environmet
 
         private Queue<Missile> missilesInactive;
         private Queue<Missile> missilesActive;
+
+        public UnityEvent onShoot;
 
         private void Awake()
         {
@@ -30,6 +33,8 @@ namespace RossoGame.Environmet
             missile.gameObject.SetActive(true);
             missile.transform.position = missileCannon.transform.position;
             missile.transform.localRotation = this.transform.localRotation;
+
+            onShoot.Invoke();
         }
 
         private void InstantiateMissiles()

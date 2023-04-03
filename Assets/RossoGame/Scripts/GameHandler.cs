@@ -2,6 +2,7 @@ using RossoGame.Environmet;
 using RossoGame.ScriptableObjects;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityShared.Behaviours.Handlers;
 using UnityShared.Behaviours.Sprite;
 using UnityShared.Extensions.CSharp;
@@ -16,6 +17,8 @@ namespace RossoGame
         public PanelHandler gameOverPanel;
 
         private bool isPlaying;
+
+        public UnityEvent onMeteorDestroed;
 
         private void Awake()
         {
@@ -66,6 +69,8 @@ namespace RossoGame
 
             scoreData.score += meteor.data.score;
             Destroy(meteor.gameObject);
+
+            onMeteorDestroed.Invoke();
         }
         private void ShowGameOver()
         {
