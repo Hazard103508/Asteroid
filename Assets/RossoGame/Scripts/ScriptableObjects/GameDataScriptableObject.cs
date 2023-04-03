@@ -6,6 +6,5 @@ namespace RossoGame.ScriptableObjects
     public class GameDataScriptableObject : ScriptableObject
     {
         public int score;
-        public int lifes;
     }
 }
