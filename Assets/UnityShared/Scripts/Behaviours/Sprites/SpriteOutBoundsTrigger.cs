@@ -13,6 +13,11 @@ namespace UnityShared.Behaviours.Sprite
         public Bounds<bool> bordersToCheck;
         public Bounds<UnityEvent> onOut;
 
+        public float BorderLeft => bordersOut.left;
+        public float BorderRight => bordersOut.right;
+        public float BorderTop => bordersOut.top;
+        public float BorderBottom => bordersOut.bottom;
+
         void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();

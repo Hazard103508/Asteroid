@@ -1,18 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace RossoGame.Environmet
 {
     public class MissilesHandler : MonoBehaviour
     {
-        public GameObject missilePref;
+        public Missile missilePref;
         public Transform missileCannon;
         public Transform folder;
         public int ammo;
         public float missilSeed;
 
-        private List<Missile> missiles;
-        private int missileIndex = 0;
+        private Queue<Missile> missilesInactive;
+        private Queue<Missile> missilesActive;
 
         private void Awake()
         {
@@ -21,25 +22,27 @@ namespace RossoGame.Environmet
 
         public void Shoot()
         {
-            var missile = missiles[missileIndex];
+            if (!missilesInactive.Any())
+                return;
 
-            if (missile.gameObject.activeSelf)
-                return; // no hay misil disponible
+            var missile = missilesInactive.Dequeue();
+            missilesActive.Enqueue(missile);
 
             missile.gameObject.SetActive(true);
             missile.transform.position = missileCannon.transform.position;
             missile.transform.localRotation = this.transform.localRotation;
-
-            missileIndex = missileIndex == missiles.Count - 1 ? 0 : missileIndex + 1;
         }
 
         private void InstantiateMissiles()
         {
-            missiles = new List<Missile>();
+            missilesInactive = new Queue<Missile>();
+            missilesActive = new Queue<Missile>();
+
             for (int i = 0; i < ammo; i++)
             {
-                var obj = Instantiate(missilePref, folder);
-                missiles.Add(obj.GetComponent<Missile>());
+                var missile = Instantiate(missilePref, folder);
+                missile.onCollided.AddListener(() => missilesInactive.Enqueue(missile));
+                missilesInactive.Enqueue(missile);
             }
         }
     }

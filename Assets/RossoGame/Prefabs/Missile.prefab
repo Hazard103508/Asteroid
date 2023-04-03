@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5167350701351522819}
   - component: {fileID: 5167350701351522829}
-  - component: {fileID: 206765215297294352}
-  - component: {fileID: -4158232207434429200}
   - component: {fileID: -4003722167578671612}
   - component: {fileID: 5759867866498155086}
+  - component: {fileID: -4158232207434429200}
+  - component: {fileID: -839892526742735685}
+  - component: {fileID: 206765215297294352}
   m_Layer: 0
   m_Name: Missile
   m_TagString: missile
@@ -88,97 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &206765215297294352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5167350701351522818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3dbac4c81d98184db50e4b0c1df21fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
---- !u!114 &-4158232207434429200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5167350701351522818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 775f53002fb94c64e91a35657e7239d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bordersToCheck:
-    left: 1
-    right: 1
-    top: 1
-    bottom: 1
-  onOut:
-    left:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5167350701351522818}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    right:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5167350701351522818}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    top:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5167350701351522818}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    bottom:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5167350701351522818}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!50 &-4003722167578671612
 Rigidbody2D:
   serializedVersion: 4
@@ -226,3 +136,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09, y: 0.54}
   m_EdgeRadius: 0
+--- !u!114 &-4158232207434429200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167350701351522818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775f53002fb94c64e91a35657e7239d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bordersToCheck:
+    left: 1
+    right: 1
+    top: 1
+    bottom: 1
+  onOut:
+    left:
+      m_PersistentCalls:
+        m_Calls: []
+    right:
+      m_PersistentCalls:
+        m_Calls: []
+    top:
+      m_PersistentCalls:
+        m_Calls: []
+    bottom:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &-839892526742735685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167350701351522818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ef2a3defb73f54e930c6a1d029b9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &206765215297294352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167350701351522818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dbac4c81d98184db50e4b0c1df21fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10

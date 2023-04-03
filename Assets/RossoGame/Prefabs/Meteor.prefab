@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8229875561006371}
   - component: {fileID: 8229875561006370}
   - component: {fileID: 8229875561006383}
-  - component: {fileID: 8229875561006380}
+  - component: {fileID: -4318558216200520946}
+  - component: {fileID: -5032946201432644844}
   - component: {fileID: 8229875561006381}
   m_Layer: 0
   m_Name: Meteor
@@ -103,7 +104,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.45
---- !u!114 &8229875561006380
+--- !u!114 &-4318558216200520946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,75 +113,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 8229875561006368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160127cf5516d3d45b530b5a6f732bd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 775f53002fb94c64e91a35657e7239d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bordersToLimit:
+  bordersToCheck:
     left: 1
     right: 1
     top: 1
     bottom: 1
-  onHit:
+  onOut:
     left:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8229875561006381}
-          m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
-          m_MethodName: InvertX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     right:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8229875561006381}
-          m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
-          m_MethodName: InvertX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     top:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8229875561006381}
-          m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
-          m_MethodName: InvertY
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     bottom:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8229875561006381}
-          m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
-          m_MethodName: InvertY
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+--- !u!114 &-5032946201432644844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8229875561006368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ef2a3defb73f54e930c6a1d029b9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8229875561006381
 MonoBehaviour:
   m_ObjectHideFlags: 0

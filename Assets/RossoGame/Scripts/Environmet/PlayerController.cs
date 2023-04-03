@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityShared.Behaviours.Sprite.SpriteKeepInBounds;
 
 namespace RossoGame.Environmet
 {
@@ -27,8 +26,6 @@ namespace RossoGame.Environmet
             Shoot();
         }
 
-        public void ResetInertiaY(BoundHit boundHit) => _rigidbody.velocity *= Vector2.right;
-        public void ResetInertiaX(BoundHit boundHit) => _rigidbody.velocity *= Vector2.up;
         private void Move()
         {
             var velocity = Vector2.up * Mathf.Max(0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime;

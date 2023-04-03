@@ -591,7 +591,8 @@ GameObject:
   - component: {fileID: 1114444579}
   - component: {fileID: 1114444583}
   - component: {fileID: 1114444585}
-  - component: {fileID: 1114444581}
+  - component: {fileID: 1114444586}
+  - component: {fileID: 1114444587}
   - component: {fileID: 1114444584}
   - component: {fileID: 1114444582}
   m_Layer: 0
@@ -671,84 +672,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1114444581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114444577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160127cf5516d3d45b530b5a6f732bd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bordersToLimit:
-    left: 1
-    right: 1
-    top: 1
-    bottom: 1
-  onHit:
-    left:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1114444582}
-          m_TargetAssemblyTypeName: RossoGame.PlayerController, Assembly-CSharp
-          m_MethodName: ResetInertiaX
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    right:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1114444582}
-          m_TargetAssemblyTypeName: RossoGame.PlayerController, Assembly-CSharp
-          m_MethodName: ResetInertiaX
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    top:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1114444582}
-          m_TargetAssemblyTypeName: RossoGame.PlayerController, Assembly-CSharp
-          m_MethodName: ResetInertiaY
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    bottom:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1114444582}
-          m_TargetAssemblyTypeName: RossoGame.PlayerController, Assembly-CSharp
-          m_MethodName: ResetInertiaY
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1114444582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,10 +723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3ebe3d0333aa649a79485031db1186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilePref: {fileID: 5167350701351522818, guid: db4e5e5b405305f4da7764a5759cf6cb, type: 3}
+  missilePref: {fileID: 206765215297294352, guid: db4e5e5b405305f4da7764a5759cf6cb, type: 3}
   missileCannon: {fileID: 913912184}
   folder: {fileID: 1426197673}
-  ammo: 10
+  ammo: 5
   missilSeed: 200
 --- !u!60 &1114444585
 PolygonCollider2D:
@@ -841,6 +764,48 @@ PolygonCollider2D:
       - {x: 0.48999998, y: -0.325}
       - {x: 0.48999998, y: -0.175}
       - {x: 0.09920394, y: 0.23772453}
+--- !u!114 &1114444586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114444577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775f53002fb94c64e91a35657e7239d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bordersToCheck:
+    left: 1
+    right: 1
+    top: 1
+    bottom: 1
+  onOut:
+    left:
+      m_PersistentCalls:
+        m_Calls: []
+    right:
+      m_PersistentCalls:
+        m_Calls: []
+    top:
+      m_PersistentCalls:
+        m_Calls: []
+    bottom:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1114444587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114444577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ef2a3defb73f54e930c6a1d029b9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1234858485
 GameObject:
   m_ObjectHideFlags: 0

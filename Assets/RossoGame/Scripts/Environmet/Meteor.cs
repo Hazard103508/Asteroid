@@ -27,14 +27,11 @@ namespace RossoGame.Environmet
             transform.Rotate(Vector3.forward * rotation * Time.deltaTime);
         }
 
-        public void InvertX() => direction *= new Vector2(-1, 1);
-        public void InvertY() => direction *= new Vector2(1, -1);
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.tag == "missile")
             {
-                collision.gameObject.SetActive(false);
+                collision.gameObject.GetComponent<Missile>().SetCollided();
                 onDestroy.Invoke(this);
             }
         }
