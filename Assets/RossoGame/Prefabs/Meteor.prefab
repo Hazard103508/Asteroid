@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2910871451873887217
+--- !u!1 &8229875561006368
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2467813815273952660}
-  - component: {fileID: 298142942053644115}
-  - component: {fileID: 4647468799237588369}
-  - component: {fileID: 9097656949489181055}
-  - component: {fileID: 8317320361339417916}
+  - component: {fileID: 8229875561006371}
+  - component: {fileID: 8229875561006370}
+  - component: {fileID: 8229875561006383}
+  - component: {fileID: 8229875561006380}
+  - component: {fileID: 8229875561006381}
   m_Layer: 0
-  m_Name: MeteorSmall
+  m_Name: Meteor
   m_TagString: meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2467813815273952660
+--- !u!4 &8229875561006371
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2910871451873887217}
+  m_GameObject: {fileID: 8229875561006368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.358, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &298142942053644115
+--- !u!212 &8229875561006370
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2910871451873887217}
+  m_GameObject: {fileID: 8229875561006368}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cd7321f1bb9cea4499fc523291965ae8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d604d20cf64fea94e9ce8f0c27e33502, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,13 +87,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4647468799237588369
+--- !u!58 &8229875561006383
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2910871451873887217}
+  m_GameObject: {fileID: 8229875561006368}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -102,14 +102,14 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.14
---- !u!114 &9097656949489181055
+  m_Radius: 0.45
+--- !u!114 &8229875561006380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2910871451873887217}
+  m_GameObject: {fileID: 8229875561006368}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 160127cf5516d3d45b530b5a6f732bd4, type: 3}
@@ -124,7 +124,7 @@ MonoBehaviour:
     left:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8317320361339417916}
+        - m_Target: {fileID: 8229875561006381}
           m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
           m_MethodName: InvertX
           m_Mode: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
     right:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8317320361339417916}
+        - m_Target: {fileID: 8229875561006381}
           m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
           m_MethodName: InvertX
           m_Mode: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
     top:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8317320361339417916}
+        - m_Target: {fileID: 8229875561006381}
           m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
           m_MethodName: InvertY
           m_Mode: 1
@@ -169,7 +169,7 @@ MonoBehaviour:
     bottom:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8317320361339417916}
+        - m_Target: {fileID: 8229875561006381}
           m_TargetAssemblyTypeName: RossoGame.Meteor, Assembly-CSharp
           m_MethodName: InvertY
           m_Mode: 1
@@ -181,16 +181,16 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &8317320361339417916
+--- !u!114 &8229875561006381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2910871451873887217}
+  m_GameObject: {fileID: 8229875561006368}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bb8fc12421ef9c4ca335c616da97749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallMeteorPref: {fileID: 0}
+  smallMeteorPref: {fileID: 2910871451873887217, guid: 189bf9e694701e043a687e3bcc7c9789, type: 3}
