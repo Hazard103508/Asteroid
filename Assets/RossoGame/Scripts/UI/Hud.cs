@@ -6,12 +6,12 @@ namespace RossoGame.UI
 {
     public class Hud : MonoBehaviour
     {
-        public GameDataScriptableObject gameData;
+        public ScoreScriptableObject scoreData;
         public Text labelScore;
 
         private void LateUpdate()
         {
-            labelScore.text = gameData.score.ToString();
+            labelScore.text = scoreData.score.ToString();
         }
     }
 }

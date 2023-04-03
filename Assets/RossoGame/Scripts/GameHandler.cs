@@ -9,17 +9,17 @@ namespace RossoGame
 {
     public class GameHandler : MonoBehaviour
     {
-        public GameDataScriptableObject gameData;
+        public ScoreScriptableObject scoreData;
+        public GameScriptableObject gameData;
         public Transform meteorPool;
-        public Meteor meteorPref;
-        public float meteorDelay;
 
         private void Awake()
         {
-            InvokeRepeating("InstantiateRandomMeteor", 1, meteorDelay);
+            scoreData.score = 0;
+            InvokeRepeating("InstantiateRandomMeteor", 1, gameData.meteorDelay);
         }
 
-        private void InstantiateRandomMeteor() => InstantiateMeteor(meteorPref);
+        private void InstantiateRandomMeteor() => InstantiateMeteor(gameData.meteorPrefab);
         private void InstantiateMeteor(Meteor prefab, Vector3? position = null)
         {
             var meteor = Instantiate(prefab, meteorPool);
@@ -43,7 +43,7 @@ namespace RossoGame
                 for (int i = 0; i < meteor.data.innerMeteors.count; i++)
                     InstantiateMeteor(meteor.data.innerMeteors.prefab, meteor.transform.position);
 
-            gameData.score += meteor.data.score;
+            scoreData.score += meteor.data.score;
             Destroy(meteor.gameObject);
         }
     }
