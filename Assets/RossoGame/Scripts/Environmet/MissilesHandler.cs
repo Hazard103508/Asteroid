@@ -1,3 +1,4 @@
+using RossoGame.ScriptableObjects;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,11 +7,9 @@ namespace RossoGame.Environmet
 {
     public class MissilesHandler : MonoBehaviour
     {
-        public Missile missilePref;
+        public PlayerScriptableObject playerData;
         public Transform missileCannon;
-        public Transform folder;
-        public int ammo;
-        public float missilSeed;
+        public Transform missilePool;
 
         private Queue<Missile> missilesInactive;
         private Queue<Missile> missilesActive;
@@ -38,9 +37,9 @@ namespace RossoGame.Environmet
             missilesInactive = new Queue<Missile>();
             missilesActive = new Queue<Missile>();
 
-            for (int i = 0; i < ammo; i++)
+            for (int i = 0; i < playerData.missile.ammo; i++)
             {
-                var missile = Instantiate(missilePref, folder);
+                var missile = Instantiate(playerData.missile.missile, missilePool);
                 missile.onCollided.AddListener(() => missilesInactive.Enqueue(missile));
                 missilesInactive.Enqueue(missile);
             }

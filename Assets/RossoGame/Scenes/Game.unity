@@ -718,12 +718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f171e72252f3df34b85209e0208471b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explotionEffectPref: {fileID: 2693779118225331271, guid: a9b610bb394bea540a93161dc6796399, type: 3}
+  playerData: {fileID: 11400000, guid: 51965c964a95b614d8755618f1701864, type: 2}
   flameLeft: {fileID: 4218466404260602344}
   flameRight: {fileID: 1234858485}
-  missileHandler: {fileID: 1114444584}
-  rotationSpeed: 270
-  moveSpeed: 250
 --- !u!50 &1114444583
 Rigidbody2D:
   serializedVersion: 4
@@ -757,11 +754,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3ebe3d0333aa649a79485031db1186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilePref: {fileID: 206765215297294352, guid: db4e5e5b405305f4da7764a5759cf6cb, type: 3}
+  playerData: {fileID: 11400000, guid: 51965c964a95b614d8755618f1701864, type: 2}
   missileCannon: {fileID: 913912184}
-  folder: {fileID: 1426197673}
-  ammo: 5
-  missilSeed: 200
+  missilePool: {fileID: 1426197673}
 --- !u!60 &1114444585
 PolygonCollider2D:
   m_ObjectHideFlags: 0
